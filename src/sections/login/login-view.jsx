@@ -94,16 +94,22 @@ export default function LoginView() {
             p: 5,
             width: 1,
             maxWidth: 1020,
-            display: 'flex', // Added display property
+            display: 'flex', 
           }}
         >
-          <img
-            src="/assets/images/loginclipart.png"
-            alt="Login Clipart"
-            style={{ width: '560px', height: '560px', marginRight: '20px' }}
-          />
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <img
+              src="/assets/images/loginclipart.png"
+              alt="Login Clipart"
+              style={{
+                width: '100%', 
+                maxWidth: '560px',
+                height: 'auto',
+              }}
+            />
+            </div>
 
-          <div>
+            <div style={{ position: 'relative' }}>
             <Typography variant="h4">DakGhar Niryat Kendra</Typography>
 
             <Typography variant="body2" sx={{ mt: 2, mb: 5 }}>
