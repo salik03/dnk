@@ -100,7 +100,7 @@ const countries = [
   'Portugal',
 ];
 
-export const users = [...Array(24)].map((_, index) => ({
+export const articles = [...Array(24)].map((_, index) => ({
   id: sample(['1', '2', '3', '4', '5']), 
   name: sample(names), 
   company: sample(countries), 

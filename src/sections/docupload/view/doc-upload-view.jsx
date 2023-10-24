@@ -13,7 +13,7 @@ import PostSort from '../post-sort';
 import PostSearch from '../post-search';
 
 
-export default function BlogView() {
+export default function DocUpload() {
   return (
     <Container>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>

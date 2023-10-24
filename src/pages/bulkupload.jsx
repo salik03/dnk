@@ -1,17 +1,18 @@
 import { Helmet } from 'react-helmet-async';
 
-import { BlogView } from 'src/sections/blog/view';
+import { BulkUpload } from 'src/sections/bulkupload/view';
+
 
 // ----------------------------------------------------------------------
 
-export default function BlogPage() {
+export default function ProductsPage() {
   return (
     <>
       <Helmet>
-        <title> Blog </title>
+        <title> Bulk Upload </title>
       </Helmet>
 
-      <BlogView />
+      <BulkUpload />
     </>
   );
 }

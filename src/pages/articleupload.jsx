@@ -1,17 +1,18 @@
 import { Helmet } from 'react-helmet-async';
 
-import { AppView } from 'src/sections/overview/view';
+import { ArticleUploadView } from 'src/sections/articleupload/view';
+
 
 // ----------------------------------------------------------------------
 
-export default function AppPage() {
+export default function ArticleUploadPage() {
   return (
     <>
       <Helmet>
-        <title> Dashboard </title>
+        <title> Article Upload </title>
       </Helmet>
 
-      <AppView />
+      <ArticleUploadView />
     </>
   );
 }

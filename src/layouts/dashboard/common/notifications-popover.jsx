@@ -37,9 +37,9 @@ const NOTIFICATIONS = [
   },
   {
     id: faker.string.uuid(),
-    title: faker.person.fullName(),
-    description: 'answered to your comment on the Minimal',
-    avatar: '/assets/images/avatars/avatar_2.jpg',
+    title: 'DNK ChatBot',
+    description: 'answered to your raised ticket on the DNK',
+    avatar: '/assets/logoglobe.svg',
     type: 'friend_interactive',
     createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
     isUnRead: true,
@@ -55,8 +55,8 @@ const NOTIFICATIONS = [
   },
   {
     id: faker.string.uuid(),
-    title: 'You have new mail',
-    description: 'sent from Guido Padberg',
+    title: 'You have recieved a new update',
+    description: 'about your booked Article #13477',
     avatar: null,
     type: 'mail',
     createdAt: sub(new Date(), { days: 2, hours: 3, minutes: 30 }),
@@ -65,7 +65,7 @@ const NOTIFICATIONS = [
   {
     id: faker.string.uuid(),
     title: 'Delivery processing',
-    description: 'Your order is being shipped',
+    description: 'Your article is being shipped',
     avatar: null,
     type: 'order_shipped',
     createdAt: sub(new Date(), { days: 3, hours: 3, minutes: 30 }),
