@@ -97,10 +97,10 @@ export default function UserPage() {
   return (
     <Container>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">Users</Typography>
+        <Typography variant="h4">Article Upload</Typography>
 
         <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
-          New User
+          New Article
         </Button>
       </Stack>
 
@@ -122,11 +122,11 @@ export default function UserPage() {
                 onRequestSort={handleSort}
                 onSelectAllClick={handleSelectAllClick}
                 headLabel={[
-                  { id: 'name', label: 'Name' },
-                  { id: 'company', label: 'Company' },
-                  { id: 'role', label: 'Role' },
+                  { id: 'Article', label: 'Article' },
+                  { id: 'Export', label: 'Export' },
+                  { id: 'Type', label: 'Type' },
                   { id: 'isVerified', label: 'Verified', align: 'center' },
-                  { id: 'status', label: 'Status' },
+                  { id: 'Availability', label: 'Availability' },
                   { id: '' },
                 ]}
               />

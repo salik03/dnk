@@ -12,16 +12,15 @@ import PostCard from '../post-card';
 import PostSort from '../post-sort';
 import PostSearch from '../post-search';
 
-// ----------------------------------------------------------------------
 
 export default function BlogView() {
   return (
     <Container>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">Blog</Typography>
+        <Typography variant="h4">Documents Upload</Typography>
 
         <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
-          New Post
+          Upload
         </Button>
       </Stack>
 
@@ -35,7 +34,7 @@ export default function BlogView() {
           ]}
         />
       </Stack>
-
+      
       <Grid container spacing={3}>
         {posts.map((post, index) => (
           <PostCard key={post.id} post={post} index={index} />

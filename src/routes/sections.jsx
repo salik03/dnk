@@ -24,9 +24,9 @@ export default function Router() {
       ),
       children: [
         { element: <IndexPage />, index: true },
-        { path: 'user', element: <UserPage /> },
-        { path: 'products', element: <ProductsPage /> },
-        { path: 'blog', element: <BlogPage /> },
+        { path: 'articleupload', element: <UserPage /> },
+        { path: 'bulkupload', element: <ProductsPage /> },
+        { path: 'docupload', element: <BlogPage /> },
       ],
     },
     {
