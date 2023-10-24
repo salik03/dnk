@@ -1,28 +1,46 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import Stack from '@mui/material/Stack';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Unstable_Grid2';
-import Typography from '@mui/material/Typography';
+import { Button, Container, Typography  } from '@mui/material';
 
-import { products } from 'src/_mock/products';
-
-import ProductCard from '../product-card';
-import ProductSort from '../product-sort';
-import ProductFilters from '../product-filters';
-import ProductCartWidget from '../product-cart-widget';
-
-// ----------------------------------------------------------------------
 
 export default function ProductsView() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [csvContent, setCsvContent] = useState(null);
 
-  const handleOpenFilter = () => {
-    setOpenFilter(true);
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      const content = e.target.result;
+      setCsvContent(content);
+    };
+
+    reader.readAsText(file);
   };
 
-  const handleCloseFilter = () => {
-    setOpenFilter(false);
+
+  const renderCsvAsTable = () => {
+    if (!csvContent) return null;
+
+    const lines = csvContent.split('\n');
+
+    return (
+      <table>
+        <tbody>
+          {lines.map((line, index) => {
+            const data = line.split(',');
+            return (
+              <tr key={index}>
+                {data.map((cell, cellIndex) => (
+                  <td key={cellIndex}>{cell}</td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    );
   };
 
   return (
@@ -30,34 +48,21 @@ export default function ProductsView() {
       <Typography variant="h4" sx={{ mb: 5 }}>
         Bulk Upload
       </Typography>
-
-      <Stack
-        direction="row"
-        alignItems="center"
-        flexWrap="wrap-reverse"
-        justifyContent="flex-end"
-        sx={{ mb: 5 }}
-      >
-        <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
-          <ProductFilters
-            openFilter={openFilter}
-            onOpenFilter={handleOpenFilter}
-            onCloseFilter={handleCloseFilter}
-          />
-
-          <ProductSort />
-        </Stack>
-      </Stack>
-
-      <Grid container spacing={3}>
-        {products.map((product) => (
-          <Grid key={product.id} xs={12} sm={6} md={3}>
-            <ProductCard product={product} />
-          </Grid>
-        ))}
-      </Grid>
-
-      <ProductCartWidget />
+      <div>
+        <input type="file" accept=".csv" onChange={handleFileUpload} />
+        <div>{renderCsvAsTable()}</div>
+        <NavLink to="/">
+          <Button>Save</Button>
+        </NavLink>
+        <a
+          href="https://docs.google.com/spreadsheets/d/1J4bGxcogRDO49TfGW7bAR8bn6M70tW78/edit?usp=sharing&ouid=100733601089450328957&rtpof=true&sd=true"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="download-button"
+        >
+          Download Excel Template
+        </a>
+      </div>
     </Container>
   );
 }
