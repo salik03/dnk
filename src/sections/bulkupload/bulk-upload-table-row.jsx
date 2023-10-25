@@ -15,7 +15,7 @@ import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-export default function UserTableRow({
+export default function BulkTableRow({
   selected,
   name,
   company,
@@ -90,7 +90,7 @@ export default function UserTableRow({
   );
 }
 
-UserTableRow.propTypes = {
+BulkTableRow.propTypes = {
   company: PropTypes.any,
   handleClick: PropTypes.func,
   isVerified: PropTypes.any,
