@@ -10,10 +10,13 @@ import {
   TableCell,
   Container,
   Typography,
+  TableContainer
 } from '@mui/material';
 
+import Scrollbar from 'src/components/scrollbar';
+
 import UserTableToolbar from 'src/sections/articleupload/user-table-toolbar';
-import { emptyRows, applyFilter, getComparator, visuallyHidden } from 'src/sections/articleupload/utils';
+import { applyFilter, getComparator } from 'src/sections/articleupload/utils';
 
 import BulkTableRow from '../bulk-upload-table-row';
 
@@ -105,43 +108,89 @@ export default function ProductsView() {
     ];
 
     return (
+      <Scrollbar>
+      <TableContainer sx={{ overflow: 'unset' }}>      
       <Table>
-<TableHead>
-  <TableRow>
-    <TableCell padding="checkbox">
-      <div style={visuallyHidden}>Select All</div>
-    </TableCell>
-    {headLabel.map((headCell) => (
-      <TableCell key={headCell.id}>{headCell.label}</TableCell>
-    ))}
-  </TableRow>
-</TableHead>
-
+        <TableHead>
+          <TableRow>
+            {headLabel.map((headCell) => (
+              <TableCell key={headCell.id}>{headCell.label}</TableCell>
+            ))}
+          </TableRow>
+        </TableHead>
         <TableBody>
-        {applyFilter({
-  inputData: rows,
-  comparator: getComparator('asc', 'id'), 
-  filterName,
-}).map((row, rowIndex) => (
-  <BulkTableRow
-    key={rowIndex}
-    selected={false}
-    name={row[0]} 
-    company={row[1]} 
-    role={row[2]} 
-    isVerified={row[3]} 
-    status={row[4]} 
-    handleClick={() => {}}
-  />
-))}
-
-          {emptyRows(0, 5, rows.length) > 0 && (
-            <TableRow style={{ height: 53 * emptyRows(0, 5, rows.length) }}>
-              <TableCell colSpan={headLabel.length + 1} />
-            </TableRow>
-          )}
+          {applyFilter({
+            inputData: rows,
+            comparator: getComparator('asc', 'id'),
+            filterName,
+          }).map((row, rowIndex) => (
+            <BulkTableRow
+              key={rowIndex}
+              selected={false}
+              id={row[0]}
+              senderref={row[1]}
+              articletype={row[2]}
+              producttype={row[3]}
+              servicecat={row[4]}
+              articleweight={row[5]}
+              nondeliveryinst={row[6]}
+              receipientref={row[7]}
+              nameofreceipient={row[8]}
+              receipientcompname={row[9]}
+              receipientaddressline1={row[10]}
+              receipientaddressline2={row[11]}
+              receipientcity={row[12]}
+              receipientpincode={row[13]}
+              receipientcountry={row[14]}
+              receipientemail={row[15]}
+              receipientmobile={row[16]}
+              nooflicence={row[17]}
+              noofcertificate={row[18]}
+              noofinvoice={row[19]}
+              insurancevaluesdr={row[20]}
+              selffilling={row[21]}
+              custombrokerlicenceno={row[22]}
+              custombrokername={row[23]}
+              custombrokeraddr={row[24]}
+              totalval={row[25]}
+              decl1={row[26]}
+              decl2={row[27]}
+              decl3={row[28]}
+              hscode={row[29]}
+              prd_desc={row[30]}
+              prd_qty_unit={row[31]}
+              count={row[32]}
+              prd_gross_wt={row[33]}
+              prd_wgt_net={row[34]}
+              origincountry={row[35]}
+              invoiceno={row[36]}
+              prd_inv_date={row[37]}
+              ecomm={row[38]}
+              ecomm_url={row[39]}
+              ecomm_pay_tranid={row[40]}
+              ecomm_sku_no={row[41]}
+              tax_inv_date={row[42]}
+              tax_inv_sno={row[43]}
+              tax_inv_val={row[44]}
+              asbl_fob={row[45]}
+              asbl_curr={row[46]}
+              expo_duty_rate={row[47]}
+              expo_duty_amt={row[48]}
+              cess_rate={row[49]}
+              cess_amt={row[50]}
+              lut_bond_det={row[51]}
+              igst_rate={row[52]}
+              igst_amt={row[53]}
+              comp_cess_rate={row[54]}
+              comp_ces_amt={row[55]}
+              t_duty={row[56]}
+              t_cess={row[57]}
+            />
+          ))}
         </TableBody>
       </Table>
+      </TableContainer>
+      </Scrollbar>
     );
   };
 
@@ -157,14 +206,14 @@ export default function ProductsView() {
         <NavLink to="/">
           <Button>Save</Button>
         </NavLink>
-        <a
+        <Button
           href="https://docs.google.com/spreadsheets/d/1J4bGxcogRDO49TfGW7bAR8bn6M70tW78/edit?usp=sharing&ouid=100733601089450328957&rtpof=true&sd=true"
           target="_blank"
           rel="noopener noreferrer"
           className="download-button"
         >
           Download Excel Template
-        </a>
+        </Button>
       </div>
     </Container>
   );
