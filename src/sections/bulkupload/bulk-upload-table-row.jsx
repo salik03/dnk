@@ -13,6 +13,7 @@ export default function BulkTableRow({
   id,
   senderref,
   articletype,
+  rowColor,
   producttype,
   servicecat,
   articleweight,
@@ -69,10 +70,14 @@ export default function BulkTableRow({
   t_duty,
   t_cess,
 }) {
+  const rowStyle = {
+    backgroundColor: rowColor === 'red' ? '#ff0000' : 'lightgreen',
+    color: 'white', 
+  };
 
 
   return (
-      <TableRow>
+      <TableRow style={rowStyle}>
         <TableCell component="th" scope="row" padding="none">
           <Stack direction="row" alignItems="center" spacing={2}>
             <Typography variant="subtitle2" noWrap>
@@ -143,6 +148,7 @@ export default function BulkTableRow({
 
 BulkTableRow.propTypes = {
   id: PropTypes.string,
+  rowColor: PropTypes.string,
   senderref: PropTypes.string,
   articletype: PropTypes.string,
   producttype: PropTypes.string,

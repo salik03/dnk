@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import {
+  Stack,
   Table,
   Button,
   TableRow,
@@ -14,15 +15,15 @@ import {
 } from '@mui/material';
 
 import Scrollbar from 'src/components/scrollbar';
+import Iconify from 'src/components/iconify/iconify';
 
-import UserTableToolbar from 'src/sections/articleupload/user-table-toolbar';
 import { applyFilter, getComparator } from 'src/sections/articleupload/utils';
 
 import BulkTableRow from '../bulk-upload-table-row';
 
 export default function ProductsView() {
   const [csvContent, setCsvContent] = useState(null);
-  const [filterName, setFilterName] = useState('');
+  const [isCsvUploaded, setIsCsvUploaded] = useState(false); 
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -31,13 +32,10 @@ export default function ProductsView() {
     reader.onload = (e) => {
       const content = e.target.result;
       setCsvContent(content);
+      setIsCsvUploaded(true);
     };
 
     reader.readAsText(file);
-  };
-
-  const handleFilterName = (event) => {
-    setFilterName(event.target.value);
   };
 
   const renderCsvAsTable = () => {
@@ -122,12 +120,12 @@ export default function ProductsView() {
           {applyFilter({
             inputData: rows,
             comparator: getComparator('asc', 'id'),
-            filterName,
           }).map((row, rowIndex) => (
             <BulkTableRow
               key={rowIndex}
               selected={false}
               id={row[0]}
+              rowColor={Math.random() < 0.5 ? 'red' : 'green'}
               senderref={row[1]}
               articletype={row[2]}
               producttype={row[3]}
@@ -196,17 +194,9 @@ export default function ProductsView() {
 
   return (
     <Container>
-      <Typography variant="h4" sx={{ mb: 5 }}>
-        Bulk Upload
-      </Typography>
-      <div>
-        <input type="file" accept=".csv" onChange={handleFileUpload} />
-        <UserTableToolbar filterName={filterName} onFilterName={handleFilterName} />
-        <div>{renderCsvAsTable()}</div>
-        <NavLink to="/">
-          <Button>Save</Button>
-        </NavLink>
-        <Button
+      <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+        <Typography variant="h4">Bulk Upload</Typography>
+        <Button variant="contained" color="success" startIcon={<Iconify icon="tabler:download" />}
           href="https://docs.google.com/spreadsheets/d/1J4bGxcogRDO49TfGW7bAR8bn6M70tW78/edit?usp=sharing&ouid=100733601089450328957&rtpof=true&sd=true"
           target="_blank"
           rel="noopener noreferrer"
@@ -214,7 +204,25 @@ export default function ProductsView() {
         >
           Download Excel Template
         </Button>
+      </Stack>
+      <div>
+        <input type="file" accept=".csv" onChange={handleFileUpload} />
+        <div>{renderCsvAsTable()}</div>
+        {isCsvUploaded && ( 
+          <Stack mt={3}>
+          <NavLink to="/">
+            <Button variant="contained" color="success" startIcon={<Iconify icon="mingcute:save-line" />}>
+              Save
+            </Button>
+          </NavLink>
+        </Stack>
+        )}
       </div>
     </Container>
   );
 }
+
+
+
+
+
