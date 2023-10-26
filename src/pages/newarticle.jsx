@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-import { NewArticleView } from 'src/sections/newarticle'
+import { NewArticleView } from 'src/sections/senderadress'
 // ----------------------------------------------------------------------
 
 export default function NewArtPage() {
