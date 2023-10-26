@@ -78,7 +78,7 @@ export default function BulkTableRow({
 
   return (
       <TableRow style={rowStyle}>
-        <TableCell component="th" scope="row" padding="none">
+        <TableCell component="th" scope="row" padding="centre">
           <Stack direction="row" alignItems="center" spacing={2}>
             <Typography variant="subtitle2" noWrap>
               {id}

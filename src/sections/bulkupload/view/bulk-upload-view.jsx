@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import {
+  Card,
   Stack,
   Table,
   Button,
@@ -11,7 +12,7 @@ import {
   TableCell,
   Container,
   Typography,
-  TableContainer
+  TableContainer,
 } from '@mui/material';
 
 import Scrollbar from 'src/components/scrollbar';
@@ -106,9 +107,10 @@ export default function ProductsView() {
     ];
 
     return (
+      <Card>
       <Scrollbar>
       <TableContainer sx={{ overflow: 'unset' }}>      
-      <Table>
+      <Table  sx={{ minWidth: 800 }}>
         <TableHead>
           <TableRow>
             {headLabel.map((headCell) => (
@@ -189,6 +191,8 @@ export default function ProductsView() {
       </Table>
       </TableContainer>
       </Scrollbar>
+      </Card>
+      
     );
   };
 
