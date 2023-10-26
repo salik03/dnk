@@ -3,12 +3,13 @@ import { Outlet, Navigate, useRoutes } from 'react-router-dom';
 
 import DashboardLayout from 'src/layouts/dashboard';
 
-export const IndexPage = lazy(() => import('src/pages/dashboard'));
-export const BlogPage = lazy(() => import('src/pages/docupload'));
-export const UserPage = lazy(() => import('src/pages/articleupload'));
+export const AppPage = lazy(() => import('src/pages/dashboard'));
+export const DocPage = lazy(() => import('src/pages/docupload'));
+export const ArticleUploadPage = lazy(() => import('src/pages/articleupload'));
 export const LoginPage = lazy(() => import('src/pages/login'));
-export const ProductsPage = lazy(() => import('src/pages/bulkupload'));
+export const BulkPage = lazy(() => import('src/pages/bulkupload'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
+export const NewArtPage = lazy(() => import('src/pages/newarticle'));
 
 // ----------------------------------------------------------------------
 
@@ -23,10 +24,11 @@ export default function Router() {
         </DashboardLayout>
       ),
       children: [
-        { element: <IndexPage />, index: true },
-        { path: 'articleupload', element: <UserPage /> },
-        { path: 'bulkupload', element: <ProductsPage /> },
-        { path: 'docupload', element: <BlogPage /> },
+        { element: <AppPage />, index: true },
+        { path: 'articleupload', element: <ArticleUploadPage /> },
+        { path: 'bulkupload', element: <BulkPage /> },
+        { path: 'docupload', element: <DocPage /> },
+        { path: 'newarticle', element: <NewArtPage /> },
       ],
     },
     {

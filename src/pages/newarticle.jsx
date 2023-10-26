@@ -1,18 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
-import { BulkUpload } from 'src/sections/bulkupload/view';
-
-
+import { NewArticleView } from 'src/sections/newarticle'
 // ----------------------------------------------------------------------
 
-export default function BulkPage() {
+export default function NewArtPage() {
   return (
     <>
       <Helmet>
-        <title> Bulk Upload </title>
+        <title> New Article </title>
       </Helmet>
 
-      <BulkUpload />
+    <NewArticleView />
+
     </>
   );
 }

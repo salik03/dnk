@@ -21,6 +21,7 @@ import UserTableHead from '../user-table-head';
 import TableEmptyRows from '../table-empty-rows';
 import UserTableToolbar from '../user-table-toolbar';
 import { emptyRows, applyFilter, getComparator } from '../utils';
+import { NavLink } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -99,9 +100,11 @@ export default function ArticleUpload() {
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
         <Typography variant="h4">Article Upload</Typography>
 
+        <NavLink to="/newarticle">
         <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
           New Article
         </Button>
+        </NavLink>
       </Stack>
 
       <Card>

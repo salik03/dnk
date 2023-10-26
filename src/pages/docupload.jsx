@@ -5,7 +5,7 @@ import { DocUpload } from 'src/sections/docupload/view';
 
 // ----------------------------------------------------------------------
 
-export default function BlogPage() {
+export default function DocPage() {
   return (
     <>
       <Helmet>
