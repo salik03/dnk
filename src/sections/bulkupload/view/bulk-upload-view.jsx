@@ -199,7 +199,7 @@ export default function ProductsView() {
   return (
     <Container>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">Bulk Upload</Typography>
+        <Typography variant="h3">Bulk Upload</Typography>
         <Button variant="contained" color="success" startIcon={<Iconify icon="tabler:download" />}
           href="https://docs.google.com/spreadsheets/d/1J4bGxcogRDO49TfGW7bAR8bn6M70tW78/edit?usp=sharing&ouid=100733601089450328957&rtpof=true&sd=true"
           target="_blank"

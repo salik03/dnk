@@ -17,7 +17,7 @@ export default function DocUpload() {
   return (
     <Container>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">Documents Upload</Typography>
+        <Typography variant="h3">Documents Upload</Typography>
 
         <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
           Upload

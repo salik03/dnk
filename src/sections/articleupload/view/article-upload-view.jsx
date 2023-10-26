@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
@@ -21,7 +22,6 @@ import UserTableHead from '../user-table-head';
 import TableEmptyRows from '../table-empty-rows';
 import UserTableToolbar from '../user-table-toolbar';
 import { emptyRows, applyFilter, getComparator } from '../utils';
-import { NavLink } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ export default function ArticleUpload() {
   return (
     <Container>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">Article Upload</Typography>
+        <Typography variant="h3">Article Upload</Typography>
 
         <NavLink to="/newarticle">
         <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>

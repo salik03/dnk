@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 
-import Checkbox from '@mui/material/Checkbox';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { Container, Stack } from '@mui/material';
+import MenuItem from '@mui/material/MenuItem';
+import Checkbox from '@mui/material/Checkbox';
+import TextField from '@mui/material/TextField';
+import { Stack, Container } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import FormControlLabel from '@mui/material/FormControlLabel';
+
+import Iconify from 'src/components/iconify/iconify';
 
 const countries = ['India', 'USA', 'China', 'Brazil', 'United Kingdom'];
 
@@ -32,6 +34,10 @@ export default function NewArticleView() {
       ...formValues,
       [name]: type === 'checkbox' ? checked : value,
     });
+  };
+
+  const handleContinue = () => {
+    history.push('/newarticle2', { formValues });
   };
 
   return (
@@ -168,11 +174,10 @@ export default function NewArticleView() {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => {
-                // Handle form submission here
-              }}
+              onClick={handleContinue}
             >
-              Submit
+              Continue&nbsp;
+              <Iconify icon="grommet-icons:form-next" />
             </Button>
           </Box>
         </form>

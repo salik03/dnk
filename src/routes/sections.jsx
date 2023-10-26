@@ -10,6 +10,7 @@ export const LoginPage = lazy(() => import('src/pages/login'));
 export const BulkPage = lazy(() => import('src/pages/bulkupload'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 export const NewArtPage = lazy(() => import('src/pages/newarticle'));
+export const NewArtPage2 = lazy(() => import('src/pages/newarticle2'));
 
 // ----------------------------------------------------------------------
 
@@ -29,6 +30,7 @@ export default function Router() {
         { path: 'bulkupload', element: <BulkPage /> },
         { path: 'docupload', element: <DocPage /> },
         { path: 'newarticle', element: <NewArtPage /> },
+        { path: 'newarticle2', element: <NewArtPage2 /> },
       ],
     },
     {
