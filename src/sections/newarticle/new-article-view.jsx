@@ -41,7 +41,7 @@ export default function NewArticleView() {
   return (
     <Container>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h3">New Article</Typography>
+        <Typography variant="h3">Sender&apos;s Address</Typography>
         <Typography variant="caption" color='error' fontStyle="italic">
             *indicates required field
         </Typography>
