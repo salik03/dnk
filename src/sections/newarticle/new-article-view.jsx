@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -36,9 +37,6 @@ export default function NewArticleView() {
     });
   };
 
-  const handleContinue = () => {
-    history.push('/newarticle2', { formValues });
-  };
 
   return (
     <Container>
@@ -171,14 +169,15 @@ export default function NewArticleView() {
           />
 
           <Box mt={2}>
+            <NavLink to="/newarticle2">
             <Button
               variant="contained"
               color="primary"
-              onClick={handleContinue}
             >
               Continue&nbsp;
               <Iconify icon="grommet-icons:form-next" />
             </Button>
+            </NavLink>
           </Box>
         </form>
     </Container>
