@@ -82,8 +82,8 @@ export default function Homepage() {
 
         <Grid xs={12} md={6} lg={8}>
           <AppWebsiteVisits
-            title="Website Visits"
-            subheader="(+43%) than last year"
+            title="Export Frequency"
+            subheader="Group by Month"
             chart={{
               labels: [
                 '01/01/2003',
@@ -119,7 +119,7 @@ export default function Homepage() {
 
         <Grid xs={12} md={6} lg={4}>
           <AppCurrentVisits
-            title="Current Visits"
+            title="Types of Consignment"
             chart={{
               series: [
                 { label: 'International EMS Merchandise', value: 4344 },
@@ -153,7 +153,7 @@ export default function Homepage() {
 
         <Grid xs={12} md={6} lg={8}>
           <AppNewsUpdate
-            title="News Update"
+            title="History"
             list={[...Array(5)].map((_, index) => ({
               id: faker.string.uuid(),
               title: faker.person.jobTitle(),
@@ -187,11 +187,11 @@ export default function Homepage() {
           <AppTasks
             title="Tasks"
             list={[
-              { id: '1', name: 'Create FireStone Logo' },
-              { id: '2', name: 'Add SCSS and JS files if required' },
-              { id: '3', name: 'Stakeholder Meeting' },
-              { id: '4', name: 'Scoping & Estimations' },
-              { id: '5', name: 'Sprint Showcase' },
+              { id: '1', name: 'Set up infrastructure and staff for Dak Ghar Niryat Kendra.' },
+              { id: '2', name: 'Launch a pilot program in select post offices.' },
+              { id: '3', name: 'Expand the program gradually to more post offices.' },
+              { id: '4', name: 'Continuously improve services based on user feedback.' },
+              { id: '5', name: 'Enhance team expertise and performance as needed.' },
               
             ]}
           />
