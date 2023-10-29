@@ -1,18 +1,33 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { Stack, Card } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
-import { Stack, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 import Iconify from 'src/components/iconify/iconify';
 
+import StaticTimeline from './stamps-view';
+
 const countries = ['India', 'USA', 'China', 'Brazil', 'United Kingdom'];
 
-export default function NewArticleView2() {
+const formContainerStyle = {
+  flex: 2,
+  padding: '20px',
+};
+
+const timelineContainerStyle = {
+  flex: 1,
+  padding: '20px',
+};
+
+
+export default function SendAddressView() {
   const [formValues, setFormValues] = useState({
     title: '',
     country: '',
@@ -37,16 +52,17 @@ export default function NewArticleView2() {
 
 
   return (
-    <Container>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h3">Reciever&apos;s Address</Typography>
-        <Typography variant="caption" color='error' fontStyle="italic">
+    <Card style={{ display: 'flex' }}>
+      <div style={formContainerStyle}>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+          <Typography variant="h3">Sender&apos;s Address</Typography>
+          <Typography variant="caption" color="error" fontStyle="italic">
             *indicates required field
-        </Typography>
+          </Typography>
         </Stack>
         <form >
-          <Typography variant='h4'>
-          Where is your shipment going?
+          <Typography variant='h4' align='center'>
+            Where are you shipping from?
           </Typography>
 
           <Box mt={2}>
@@ -135,8 +151,8 @@ export default function NewArticleView2() {
 
           <Box mt={2}>
             <TextField
-              name="Remail"
-              label="Recipient E-Mail*"
+              name="email"
+              label="E-Mail*"
               variant="outlined"
               fullWidth
               value={formValues.email}
@@ -146,38 +162,50 @@ export default function NewArticleView2() {
 
           <Box mt={2}>
             <TextField
-              name="RphoneNumber"
-              label="Recipient Phone Number*"
+              name="phoneNumber"
+              label="Phone Number*"
               variant="outlined"
               fullWidth
               value={formValues.phoneNumber}
               onChange={handleChange}
             />
           </Box>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="sendUpdates"
+                  checked={formValues.sendUpdates}
+                  onChange={handleChange}
+                  color="primary"
+                />
+              }
+            label="Send status updates on this shipment using the email/phone provided above"
+          />
+                  <Box mt={1} sx={{
+          color: 'white',
+          border: '1px solid #1877f2',
+          borderRadius: '4px',
+        }}
+        ><></></Box>
 
-          <Box mt={2}>
-          <NavLink to="/newarticle">
-           <Button
-              variant="contained"
-              color="warning"
-              size='small'
-              startIcon={<Iconify icon="grommet-icons:form-previous" />}
-              style={{ marginRight: '10px' }}
-            >
-                Back
-            </Button>
-            </NavLink>
-            <NavLink to="/">
-            <Button
-              variant="contained"
-              color="primary"
-            >
-              Continue&nbsp;
-              <Iconify icon="grommet-icons:form-next" />
-            </Button>
+            <Box mt={2}>
+            <NavLink to="/recieveaddress">
+              <Button variant="contained" color="primary">
+                Continue&nbsp;
+                <Iconify icon="grommet-icons:form-next" />
+              </Button>
             </NavLink>
           </Box>
         </form>
-    </Container>
+      </div>
+      <div style={timelineContainerStyle}>
+        <StaticTimeline />
+      </div>
+    </Card>
   );
 }
+
+
+
+
+

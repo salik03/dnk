@@ -100,7 +100,7 @@ export default function ArticleUpload() {
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
         <Typography variant="h3">Article Upload</Typography>
 
-        <NavLink to="/newarticle">
+        <NavLink to="/sendaddress">
         <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
           New Article
         </Button>

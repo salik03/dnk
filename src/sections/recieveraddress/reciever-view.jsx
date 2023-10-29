@@ -1,20 +1,31 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { Stack, Card } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
-import { Stack, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import FormControlLabel from '@mui/material/FormControlLabel';
 
 import Iconify from 'src/components/iconify/iconify';
 
+import StaticTimeline from './stamps-view';
+
 const countries = ['India', 'USA', 'China', 'Brazil', 'United Kingdom'];
 
-export default function NewArticleView() {
+const formContainerStyle = {
+  flex: 2,
+  padding: '20px',
+};
+
+const timelineContainerStyle = {
+  flex: 1,
+  padding: '20px',
+};
+
+
+export default function RecieverAddressView() {
   const [formValues, setFormValues] = useState({
     title: '',
     country: '',
@@ -39,16 +50,17 @@ export default function NewArticleView() {
 
 
   return (
-    <Container>
+    <Card style={{ display: 'flex' }}>
+      <div style={formContainerStyle}>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h3">Sender&apos;s Address</Typography>
+        <Typography variant="h3">Reciever&apos;s Address</Typography>
         <Typography variant="caption" color='error' fontStyle="italic">
             *indicates required field
         </Typography>
         </Stack>
         <form >
-          <Typography variant='h4'>
-            Where are you shipping from?
+          <Typography variant='h4' align='center'>
+          Where is your shipment going?
           </Typography>
 
           <Box mt={2}>
@@ -137,8 +149,8 @@ export default function NewArticleView() {
 
           <Box mt={2}>
             <TextField
-              name="email"
-              label="E-Mail*"
+              name="Remail"
+              label="Recipient E-Mail*"
               variant="outlined"
               fullWidth
               value={formValues.email}
@@ -148,28 +160,33 @@ export default function NewArticleView() {
 
           <Box mt={2}>
             <TextField
-              name="phoneNumber"
-              label="Phone Number*"
+              name="RphoneNumber"
+              label="Recipient Phone Number*"
               variant="outlined"
               fullWidth
               value={formValues.phoneNumber}
               onChange={handleChange}
             />
           </Box>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  name="sendUpdates"
-                  checked={formValues.sendUpdates}
-                  onChange={handleChange}
-                  color="primary"
-                />
-              }
-            label="Send status updates on this shipment using the email/phone provided above"
-          />
-
+          <Box mt={1} sx={{
+          color: 'white',
+          border: '1px solid #1877f2',
+          borderRadius: '4px',
+        }}
+        ><></></Box>
           <Box mt={2}>
-            <NavLink to="/newarticle2">
+          <NavLink to="/sendaddress">
+           <Button
+              variant="contained"
+              color="warning"
+              size='small'
+              startIcon={<Iconify icon="grommet-icons:form-previous" />}
+              style={{ marginRight: '10px' }}
+            >
+                Back
+            </Button>
+            </NavLink>
+            <NavLink to="/piecedetails">
             <Button
               variant="contained"
               color="primary"
@@ -180,6 +197,10 @@ export default function NewArticleView() {
             </NavLink>
           </Box>
         </form>
-    </Container>
+        </div>
+        <div style={timelineContainerStyle}>
+        <StaticTimeline />
+      </div>
+    </Card>
   );
 }

@@ -1,16 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
-import { NewArticleView } from 'src/sections/senderadress'
+import { ConsignDetail } from 'src/sections/considetails';
+
 // ----------------------------------------------------------------------
 
-export default function NewArtPage() {
+export default function PiecePage() {
   return (
     <>
       <Helmet>
-        <title> New Article </title>
+        <title> Consign Details </title>
       </Helmet>
 
-    <NewArticleView />
+    < ConsignDetail/>
 
     </>
   );
