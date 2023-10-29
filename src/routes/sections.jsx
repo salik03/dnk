@@ -9,8 +9,10 @@ export const ArticleUploadPage = lazy(() => import('src/pages/articleupload'));
 export const LoginPage = lazy(() => import('src/pages/login'));
 export const BulkPage = lazy(() => import('src/pages/bulkupload'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
-export const NewArtPage = lazy(() => import('src/pages/newarticle'));
-export const NewArtPage2 = lazy(() => import('src/pages/newarticle2'));
+export const SendAddressPage = lazy(() => import('src/pages/sendaddress'));
+export const RecieverPage = lazy(() => import('src/pages/recieveaddress'));
+export const PiecePage = lazy(() => import('src/pages/piecedetail'));
+export const ConsignPage = lazy(() => import('src/pages/conigndetail'));
 
 // ----------------------------------------------------------------------
 
@@ -29,8 +31,10 @@ export default function Router() {
         { path: 'articleupload', element: <ArticleUploadPage /> },
         { path: 'bulkupload', element: <BulkPage /> },
         { path: 'docupload', element: <DocPage /> },
-        { path: 'newarticle', element: <NewArtPage /> },
-        { path: 'newarticle2', element: <NewArtPage2 /> },
+        { path: 'sendaddress', element: <SendAddressPage /> },
+        { path: 'recieveaddress', element: <RecieverPage /> },
+        { path: 'piecedetails', element: <PiecePage /> },
+        { path: 'consigndetails', element: <ConsignPage /> },
       ],
     },
     {
