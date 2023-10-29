@@ -13,6 +13,8 @@ export const SendAddressPage = lazy(() => import('src/pages/sendaddress'));
 export const RecieverPage = lazy(() => import('src/pages/recieveaddress'));
 export const PiecePage = lazy(() => import('src/pages/piecedetail'));
 export const ConsignPage = lazy(() => import('src/pages/conigndetail'));
+export const DecPage = lazy(() => import('src/pages/declaration'));
+export const RecPage = lazy(() => import('src/pages/reciept'));
 
 // ----------------------------------------------------------------------
 
@@ -35,6 +37,8 @@ export default function Router() {
         { path: 'recieveaddress', element: <RecieverPage /> },
         { path: 'piecedetails', element: <PiecePage /> },
         { path: 'consigndetails', element: <ConsignPage /> },
+        { path: 'declaration', element: <DecPage /> },
+        { path: 'reciept', element: <RecPage /> },
       ],
     },
     {
