@@ -3,17 +3,12 @@ import { faker } from '@faker-js/faker';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
-
-// import Iconify from 'src/components/iconify';
-
 import AppTasks from '../app-tasks';
 import AppNewsUpdate from '../app-news-update';
 import AppOrderTimeline from '../app-order-timeline';
 import AppCurrentVisits from '../app-current-visits';
 import AppWebsiteVisits from '../app-website-visits';
 import AppWidgetSummary from '../app-widget-summary';
-// import AppTrafficBySite from '../app-traffic-by-site';
-// import AppCurrentSubject from '../app-current-subject';
 import AppConversionRates from '../app-conversion-rates';
 
 // ----------------------------------------------------------------------
@@ -82,8 +77,8 @@ export default function Homepage() {
 
         <Grid xs={12} md={6} lg={8}>
           <AppWebsiteVisits
-            title="Website Visits"
-            subheader="(+43%) than last year"
+            title="Export Frequency"
+            subheader="Group by Month"
             chart={{
               labels: [
                 '01/01/2003',
@@ -119,7 +114,7 @@ export default function Homepage() {
 
         <Grid xs={12} md={6} lg={4}>
           <AppCurrentVisits
-            title="Current Visits"
+            title="Types of Consignment"
             chart={{
               series: [
                 { label: 'International EMS Merchandise', value: 4344 },
@@ -153,7 +148,7 @@ export default function Homepage() {
 
         <Grid xs={12} md={6} lg={8}>
           <AppNewsUpdate
-            title="News Update"
+            title="History"
             list={[...Array(5)].map((_, index) => ({
               id: faker.string.uuid(),
               title: faker.person.jobTitle(),
@@ -187,11 +182,11 @@ export default function Homepage() {
           <AppTasks
             title="Tasks"
             list={[
-              { id: '1', name: 'Create FireStone Logo' },
-              { id: '2', name: 'Add SCSS and JS files if required' },
-              { id: '3', name: 'Stakeholder Meeting' },
-              { id: '4', name: 'Scoping & Estimations' },
-              { id: '5', name: 'Sprint Showcase' },
+              { id: '1', name: 'Set up infrastructure and staff for Dak Ghar Niryat Kendra.' },
+              { id: '2', name: 'Launch a pilot program in select post offices.' },
+              { id: '3', name: 'Expand the program gradually to more post offices.' },
+              { id: '4', name: 'Continuously improve services based on user feedback.' },
+              { id: '5', name: 'Enhance team expertise and performance as needed.' },
               
             ]}
           />
