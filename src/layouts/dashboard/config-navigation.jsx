@@ -23,11 +23,6 @@ const navConfig = [
     icon: icon('ic_cart'),
   },
   {
-    title: 'Documents Upload',
-    path: '/docupload',
-    icon: icon('ic_blog'),
-  },
-  {
     title: 'Login',
     path: '/login',
     icon: icon('ic_lock'),

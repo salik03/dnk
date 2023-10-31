@@ -95,14 +95,14 @@ export default function Homepage() {
               ],
               series: [
                 {
-                  name: 'Team A',
+                  name: 'Histogram',
                   type: 'column',
                   fill: 'solid',
                   data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
                 },
                 
                 {
-                  name: 'Team C',
+                  name: 'Line Graph',
                   type: 'line',
                   fill: 'solid',
                   data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
