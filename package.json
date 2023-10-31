@@ -1,5 +1,4 @@
 {
-  "homepage": "http://salik03.github.io/dnk",
   "name": "@minimal/material-kit-react",
   "author": "minimals.cc",
   "licence": "MIT",
@@ -8,8 +7,6 @@
   "scripts": {
     "dev": "vite",
     "start": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
