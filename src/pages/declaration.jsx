@@ -36,6 +36,9 @@ const DeclarationForm = () => {
         <Typography variant="h4" gutterBottom sx={{margin:'1vh'}} >
           Declaration
         </Typography>
+        <Typography variant="subtitle" gutterBottom sx={{margin:'1vh'}} >
+          Check all the boxes to book the article!
+        </Typography>
           <FormControlLabel
             control={
               <Checkbox
@@ -84,7 +87,7 @@ const DeclarationForm = () => {
             color="primary"
             disabled={!Object.values(checkboxes).every((isChecked) => isChecked)}
             component={Link}
-            to="/receipt"
+            to="/reciept"
           >
             Submit
           </Button>

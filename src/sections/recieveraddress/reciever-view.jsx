@@ -186,7 +186,7 @@ export default function RecieverAddressView() {
                 Back
             </Button>
             </NavLink>
-            <NavLink to="/piecedetails">
+            <NavLink to="/consigndetails">
             <Button
               variant="contained"
               color="primary"

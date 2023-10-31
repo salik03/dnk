@@ -496,7 +496,7 @@ export default function PieceDetail() {
         }}
         ><></></Box>
         <Box mt={2}>
-          <NavLink to="/recieveaddress">
+          <NavLink to="/consigndetails">
            <Button
               variant="contained"
               color="warning"
@@ -507,7 +507,7 @@ export default function PieceDetail() {
                 Back
             </Button>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/declaration">
             <Button
               variant="contained"
               color="primary"

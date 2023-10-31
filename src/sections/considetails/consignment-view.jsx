@@ -211,7 +211,7 @@ export default function ConsignDetail() {
                 Back
             </Button>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/piecedetails">
             <Button
               variant="contained"
               color="primary"
