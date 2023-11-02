@@ -11,8 +11,7 @@ export default function PiecePage() {
         <title> Piece Details </title>
       </Helmet>
 
-    < PieceDetail/>
-
+      <PieceDetail />
     </>
   );
 }

@@ -9,8 +9,6 @@ import { RouterLink } from 'src/routes/components';
 // ----------------------------------------------------------------------
 
 const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
-
-
   const logo = (
     <Box
       ref={ref}

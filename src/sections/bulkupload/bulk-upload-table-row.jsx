@@ -5,8 +5,6 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import Typography from '@mui/material/Typography';
 
-
-
 // ----------------------------------------------------------------------
 
 export default function BulkTableRow({
@@ -72,77 +70,76 @@ export default function BulkTableRow({
 }) {
   const rowStyle = {
     backgroundColor: rowColor === 'red' ? '#ff0000' : 'lightgreen',
-    color: 'white', 
+    color: 'white',
   };
 
-
   return (
-      <TableRow style={rowStyle}>
-        <TableCell component="th" scope="row" padding="centre">
-          <Stack direction="row" alignItems="center" spacing={2}>
-            <Typography variant="subtitle2" noWrap>
-              {id}
-            </Typography>
-          </Stack>
-        </TableCell>
-        <TableCell>{senderref}</TableCell>
-        <TableCell>{articletype}</TableCell>
-        <TableCell>{producttype}</TableCell>
-        <TableCell>{servicecat}</TableCell>
-        <TableCell>{articleweight}</TableCell>
-        <TableCell>{nondeliveryinst}</TableCell>
-        <TableCell>{receipientref}</TableCell>
-        <TableCell>{nameofreceipient}</TableCell>
-        <TableCell>{receipientcompname}</TableCell>
-        <TableCell>{receipientaddressline1}</TableCell>
-        <TableCell>{receipientaddressline2}</TableCell>
-        <TableCell>{receipientcity}</TableCell>
-        <TableCell>{receipientpincode}</TableCell>
-        <TableCell>{receipientcountry}</TableCell>
-        <TableCell>{receipientemail}</TableCell>
-        <TableCell>{receipientmobile}</TableCell>
-        <TableCell>{nooflicence}</TableCell>
-        <TableCell>{noofcertificate}</TableCell>
-        <TableCell>{noofinvoice}</TableCell>
-        <TableCell>{insurancevaluesdr}</TableCell>
-        <TableCell>{selffilling}</TableCell>
-        <TableCell>{custombrokerlicenceno}</TableCell>
-        <TableCell>{custombrokername}</TableCell>
-        <TableCell>{custombrokeraddr}</TableCell>
-        <TableCell>{totalval}</TableCell>
-        <TableCell>{decl1}</TableCell>
-        <TableCell>{decl2}</TableCell>
-        <TableCell>{decl3}</TableCell>
-        <TableCell>{hscode}</TableCell>
-        <TableCell>{prd_desc}</TableCell>
-        <TableCell>{prd_qty_unit}</TableCell>
-        <TableCell>{count}</TableCell>
-        <TableCell>{prd_gross_wt}</TableCell>
-        <TableCell>{prd_wgt_net}</TableCell>
-        <TableCell>{origincountry}</TableCell>
-        <TableCell>{invoiceno}</TableCell>
-        <TableCell>{prd_inv_date}</TableCell>
-        <TableCell>{ecomm}</TableCell>
-        <TableCell>{ecomm_url}</TableCell>
-        <TableCell>{ecomm_pay_tranid}</TableCell>
-        <TableCell>{ecomm_sku_no}</TableCell>
-        <TableCell>{tax_inv_date}</TableCell>
-        <TableCell>{tax_inv_sno}</TableCell>
-        <TableCell>{tax_inv_val}</TableCell>
-        <TableCell>{asbl_fob}</TableCell>
-        <TableCell>{asbl_curr}</TableCell>
-        <TableCell>{expo_duty_rate}</TableCell>
-        <TableCell>{expo_duty_amt}</TableCell>
-        <TableCell>{cess_rate}</TableCell>
-        <TableCell>{cess_amt}</TableCell>
-        <TableCell>{lut_bond_det}</TableCell>
-        <TableCell>{igst_rate}</TableCell>
-        <TableCell>{igst_amt}</TableCell>
-        <TableCell>{comp_cess_rate}</TableCell>
-        <TableCell>{comp_ces_amt}</TableCell>
-        <TableCell>{t_duty}</TableCell>
-        <TableCell>{t_cess}</TableCell>
-      </TableRow>
+    <TableRow style={rowStyle}>
+      <TableCell component="th" scope="row" padding="centre">
+        <Stack direction="row" alignItems="center" spacing={2}>
+          <Typography variant="subtitle2" noWrap>
+            {id}
+          </Typography>
+        </Stack>
+      </TableCell>
+      <TableCell>{senderref}</TableCell>
+      <TableCell>{articletype}</TableCell>
+      <TableCell>{producttype}</TableCell>
+      <TableCell>{servicecat}</TableCell>
+      <TableCell>{articleweight}</TableCell>
+      <TableCell>{nondeliveryinst}</TableCell>
+      <TableCell>{receipientref}</TableCell>
+      <TableCell>{nameofreceipient}</TableCell>
+      <TableCell>{receipientcompname}</TableCell>
+      <TableCell>{receipientaddressline1}</TableCell>
+      <TableCell>{receipientaddressline2}</TableCell>
+      <TableCell>{receipientcity}</TableCell>
+      <TableCell>{receipientpincode}</TableCell>
+      <TableCell>{receipientcountry}</TableCell>
+      <TableCell>{receipientemail}</TableCell>
+      <TableCell>{receipientmobile}</TableCell>
+      <TableCell>{nooflicence}</TableCell>
+      <TableCell>{noofcertificate}</TableCell>
+      <TableCell>{noofinvoice}</TableCell>
+      <TableCell>{insurancevaluesdr}</TableCell>
+      <TableCell>{selffilling}</TableCell>
+      <TableCell>{custombrokerlicenceno}</TableCell>
+      <TableCell>{custombrokername}</TableCell>
+      <TableCell>{custombrokeraddr}</TableCell>
+      <TableCell>{totalval}</TableCell>
+      <TableCell>{decl1}</TableCell>
+      <TableCell>{decl2}</TableCell>
+      <TableCell>{decl3}</TableCell>
+      <TableCell>{hscode}</TableCell>
+      <TableCell>{prd_desc}</TableCell>
+      <TableCell>{prd_qty_unit}</TableCell>
+      <TableCell>{count}</TableCell>
+      <TableCell>{prd_gross_wt}</TableCell>
+      <TableCell>{prd_wgt_net}</TableCell>
+      <TableCell>{origincountry}</TableCell>
+      <TableCell>{invoiceno}</TableCell>
+      <TableCell>{prd_inv_date}</TableCell>
+      <TableCell>{ecomm}</TableCell>
+      <TableCell>{ecomm_url}</TableCell>
+      <TableCell>{ecomm_pay_tranid}</TableCell>
+      <TableCell>{ecomm_sku_no}</TableCell>
+      <TableCell>{tax_inv_date}</TableCell>
+      <TableCell>{tax_inv_sno}</TableCell>
+      <TableCell>{tax_inv_val}</TableCell>
+      <TableCell>{asbl_fob}</TableCell>
+      <TableCell>{asbl_curr}</TableCell>
+      <TableCell>{expo_duty_rate}</TableCell>
+      <TableCell>{expo_duty_amt}</TableCell>
+      <TableCell>{cess_rate}</TableCell>
+      <TableCell>{cess_amt}</TableCell>
+      <TableCell>{lut_bond_det}</TableCell>
+      <TableCell>{igst_rate}</TableCell>
+      <TableCell>{igst_amt}</TableCell>
+      <TableCell>{comp_cess_rate}</TableCell>
+      <TableCell>{comp_ces_amt}</TableCell>
+      <TableCell>{t_duty}</TableCell>
+      <TableCell>{t_cess}</TableCell>
+    </TableRow>
   );
 }
 

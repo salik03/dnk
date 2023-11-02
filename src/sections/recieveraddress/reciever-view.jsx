@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { Stack, Card } from '@mui/material';
+import { Card, Stack  } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
@@ -23,7 +23,6 @@ const timelineContainerStyle = {
   flex: 1,
   padding: '20px',
 };
-
 
 export default function RecieverAddressView() {
   const [formValues, setFormValues] = useState({
@@ -48,19 +47,18 @@ export default function RecieverAddressView() {
     });
   };
 
-
   return (
     <Card style={{ display: 'flex' }}>
       <div style={formContainerStyle}>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h3">Reciever&apos;s Address</Typography>
-        <Typography variant="caption" color='error' fontStyle="italic">
+        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+          <Typography variant="h3">Reciever&apos;s Address</Typography>
+          <Typography variant="caption" color="error" fontStyle="italic">
             *indicates required field
-        </Typography>
+          </Typography>
         </Stack>
-        <form >
-          <Typography variant='h4' align='center'>
-          Where is your shipment going?
+        <form>
+          <Typography variant="h4" align="center">
+            Where is your shipment going?
           </Typography>
 
           <Box mt={2}>
@@ -168,37 +166,38 @@ export default function RecieverAddressView() {
               onChange={handleChange}
             />
           </Box>
-          <Box mt={1} sx={{
-          color: 'white',
-          border: '1px solid #1877f2',
-          borderRadius: '4px',
-        }}
-        ><></></Box>
+          <Box
+            mt={1}
+            sx={{
+              color: 'white',
+              border: '1px solid #1877f2',
+              borderRadius: '4px',
+            }}
+          >
+            <></>
+          </Box>
           <Box mt={2}>
-          <NavLink to="/sendaddress">
-           <Button
-              variant="contained"
-              color="warning"
-              size='small'
-              startIcon={<Iconify icon="grommet-icons:form-previous" />}
-              style={{ marginRight: '10px' }}
-            >
+            <NavLink to="/sendaddress">
+              <Button
+                variant="contained"
+                color="warning"
+                size="small"
+                startIcon={<Iconify icon="grommet-icons:form-previous" />}
+                style={{ marginRight: '10px' }}
+              >
                 Back
-            </Button>
+              </Button>
             </NavLink>
             <NavLink to="/consigndetails">
-            <Button
-              variant="contained"
-              color="primary"
-            >
-              Continue&nbsp;
-              <Iconify icon="grommet-icons:form-next" />
-            </Button>
+              <Button variant="contained" color="primary">
+                Continue&nbsp;
+                <Iconify icon="grommet-icons:form-next" />
+              </Button>
             </NavLink>
           </Box>
         </form>
-        </div>
-        <div style={timelineContainerStyle}>
+      </div>
+      <div style={timelineContainerStyle}>
         <StaticTimeline />
       </div>
     </Card>

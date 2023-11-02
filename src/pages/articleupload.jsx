@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 
 import { ArticleUploadView } from 'src/sections/articleupload/view';
 
-
 // ----------------------------------------------------------------------
 
 export default function ArticleUploadPage() {

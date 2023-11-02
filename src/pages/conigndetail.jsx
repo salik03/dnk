@@ -11,8 +11,7 @@ export default function PiecePage() {
         <title> Consign Details </title>
       </Helmet>
 
-    < ConsignDetail/>
-
+      <ConsignDetail />
     </>
   );
 }

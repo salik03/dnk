@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 
 import { RecieverAddressView } from 'src/sections/recieveraddress';
 
-
 // ----------------------------------------------------------------------
 
 export default function RecieverPage() {
@@ -12,8 +11,7 @@ export default function RecieverPage() {
         <title> New Article 2 </title>
       </Helmet>
 
-    <RecieverAddressView />
-
+      <RecieverAddressView />
     </>
   );
 }

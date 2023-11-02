@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { Stack, Card } from '@mui/material';
+import { Card, Stack  } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
@@ -26,7 +26,6 @@ const timelineContainerStyle = {
   padding: '20px',
 };
 
-
 export default function SendAddressView() {
   const [formValues, setFormValues] = useState({
     title: '',
@@ -50,7 +49,6 @@ export default function SendAddressView() {
     });
   };
 
-
   return (
     <Card style={{ display: 'flex' }}>
       <div style={formContainerStyle}>
@@ -60,8 +58,8 @@ export default function SendAddressView() {
             *indicates required field
           </Typography>
         </Stack>
-        <form >
-          <Typography variant='h4' align='center'>
+        <form>
+          <Typography variant="h4" align="center">
             Where are you shipping from?
           </Typography>
 
@@ -170,25 +168,19 @@ export default function SendAddressView() {
               onChange={handleChange}
             />
           </Box>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  name="sendUpdates"
-                  checked={formValues.sendUpdates}
-                  onChange={handleChange}
-                  color="primary"
-                />
-              }
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="sendUpdates"
+                checked={formValues.sendUpdates}
+                onChange={handleChange}
+                color="primary"
+              />
+            }
             label="Send status updates on this shipment using the email/phone provided above"
           />
-                  <Box mt={1} sx={{
-          color: 'white',
-          border: '1px solid #1877f2',
-          borderRadius: '4px',
-        }}
-        ><></></Box>
 
-            <Box mt={2}>
+          <Box mt={2}>
             <NavLink to="/recieveaddress">
               <Button variant="contained" color="primary">
                 Continue&nbsp;
@@ -204,8 +196,3 @@ export default function SendAddressView() {
     </Card>
   );
 }
-
-
-
-
-

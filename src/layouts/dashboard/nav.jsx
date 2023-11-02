@@ -33,7 +33,7 @@ export default function Nav({ openNav, onCloseNav }) {
     if (openNav) {
       onCloseNav();
     }
-  }, [pathname]);
+  }, [pathname, openNav, onCloseNav]);
 
   const renderAccount = (
     <Box
@@ -68,8 +68,6 @@ export default function Nav({ openNav, onCloseNav }) {
     </Stack>
   );
 
-
-
   const renderContent = (
     <Scrollbar
       sx={{
@@ -88,7 +86,6 @@ export default function Nav({ openNav, onCloseNav }) {
       {renderMenu}
 
       <Box sx={{ flexGrow: 1 }} />
-
     </Scrollbar>
   );
 

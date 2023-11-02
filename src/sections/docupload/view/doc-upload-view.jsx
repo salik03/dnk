@@ -12,7 +12,6 @@ import PostCard from '../post-card';
 import PostSort from '../post-sort';
 import PostSearch from '../post-search';
 
-
 export default function DocUpload() {
   return (
     <Container>
@@ -34,7 +33,7 @@ export default function DocUpload() {
           ]}
         />
       </Stack>
-      
+
       <Grid container spacing={3}>
         {posts.map((post, index) => (
           <PostCard key={post.id} post={post} index={index} />

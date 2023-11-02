@@ -3,6 +3,7 @@ import { faker } from '@faker-js/faker';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
+
 import AppTasks from '../app-tasks';
 import AppNewsUpdate from '../app-news-update';
 import AppOrderTimeline from '../app-order-timeline';
@@ -100,7 +101,7 @@ export default function Homepage() {
                   fill: 'solid',
                   data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
                 },
-                
+
                 {
                   name: 'Line Graph',
                   type: 'line',
@@ -123,7 +124,6 @@ export default function Homepage() {
                 { label: 'International Air Parcel', value: 4443 },
                 { label: 'International RegdL. Letter', value: 4443 },
                 { label: 'International Tracked Packet Service', value: 4443 },
-
               ],
             }}
           />
@@ -177,7 +177,6 @@ export default function Homepage() {
           />
         </Grid>
 
-
         <Grid xs={12} md={6} lg={8}>
           <AppTasks
             title="Tasks"
@@ -187,7 +186,6 @@ export default function Homepage() {
               { id: '3', name: 'Expand the program gradually to more post offices.' },
               { id: '4', name: 'Continuously improve services based on user feedback.' },
               { id: '5', name: 'Enhance team expertise and performance as needed.' },
-              
             ]}
           />
         </Grid>

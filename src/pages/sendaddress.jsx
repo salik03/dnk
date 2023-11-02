@@ -11,8 +11,7 @@ export default function NewArtPage() {
         <title> New Article </title>
       </Helmet>
 
-    <SendAddressView />
-
+      <SendAddressView />
     </>
   );
 }

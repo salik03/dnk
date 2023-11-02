@@ -20,7 +20,6 @@ import { bgGradient } from 'src/theme/css';
 import Logo from 'src/components/logo';
 import Iconify from 'src/components/iconify';
 
-
 export default function LoginView() {
   const theme = useTheme();
   const router = useRouter();
@@ -94,7 +93,7 @@ export default function LoginView() {
             p: 5,
             width: 1,
             maxWidth: 1020,
-            display: 'flex', 
+            display: 'flex',
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
@@ -102,14 +101,14 @@ export default function LoginView() {
               src="/assets/images/loginclipart.png"
               alt="Login Clipart"
               style={{
-                width: '100%', 
+                width: '100%',
                 maxWidth: '560px',
                 height: 'auto',
               }}
             />
-            </div>
+          </div>
 
-            <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative' }}>
             <Typography variant="h4">DakGhar Niryat Kendra</Typography>
 
             <Typography variant="body2" sx={{ mt: 2, mb: 5 }}>
@@ -120,15 +119,16 @@ export default function LoginView() {
             </Typography>
 
             <Stack direction="row" spacing={2}>
-            <Button
-              fullWidth
-              size="large"
-              color="inherit"
-              variant="outlined"
-              sx={{ borderColor: alpha(theme.palette.grey[500], 0.16) }}
-            >
-              <Iconify icon="eva:google-fill" color="#DF3E30" sx={{ marginRight: '8px' }} /> Sign in with Google
-            </Button>
+              <Button
+                fullWidth
+                size="large"
+                color="inherit"
+                variant="outlined"
+                sx={{ borderColor: alpha(theme.palette.grey[500], 0.16) }}
+              >
+                <Iconify icon="eva:google-fill" color="#DF3E30" sx={{ marginRight: '8px' }} /> Sign
+                in with Google
+              </Button>
             </Stack>
 
             <Divider sx={{ my: 3 }}>

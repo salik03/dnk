@@ -60,7 +60,6 @@ const names = [
   'Trading cards',
 ];
 
-
 const countries = [
   'United States',
   'China',
@@ -101,10 +100,10 @@ const countries = [
 ];
 
 export const articles = [...Array(24)].map((_, index) => ({
-  id: sample(['1', '2', '3', '4', '5']), 
-  name: sample(names), 
-  company: sample(countries), 
-  isVerified: sample([true, false]), 
+  id: sample(['1', '2', '3', '4', '5']),
+  name: sample(names),
+  company: sample(countries),
+  isVerified: sample([true, false]),
   status: sample(['Available', 'Unavailable']),
   role: sample([
     'International EMS Merchandise',

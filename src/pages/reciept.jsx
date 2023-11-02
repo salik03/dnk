@@ -1,6 +1,7 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
+
+import Button from '@mui/material/Button';
 import Iconify from 'src/components/iconify/iconify';
 
 function Receipt() {
@@ -15,13 +16,19 @@ function Receipt() {
     <div>
       <h1>Your Receipt</h1>
       <h3>Your article is booked!</h3>
-      <Button startIcon={<Iconify icon="el:print" />} variant="contained" color="primary" onClick={handlePrint}  style={{ marginRight: '10px' }}>
+      <Button
+        startIcon={<Iconify icon="el:print" />}
+        variant="contained"
+        color="primary"
+        onClick={handlePrint}
+        style={{ marginRight: '10px' }}
+      >
         Print Receipt
       </Button>
       <NavLink to="/">
-      <Button variant="contained" color="error">
-        Done
-      </Button>
+        <Button variant="contained" color="error">
+          Done
+        </Button>
       </NavLink>
     </div>
   );

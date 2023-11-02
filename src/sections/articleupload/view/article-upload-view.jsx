@@ -101,9 +101,9 @@ export default function ArticleUpload() {
         <Typography variant="h3">Article Upload</Typography>
 
         <NavLink to="/sendaddress">
-        <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
-          New Article
-        </Button>
+          <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
+            New Article
+          </Button>
         </NavLink>
       </Stack>
 
